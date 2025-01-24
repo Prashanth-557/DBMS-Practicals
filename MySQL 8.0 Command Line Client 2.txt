@@ -1,0 +1,405 @@
+Enter password: ************
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 9
+Server version: 8.0.40 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use Prashanth
+Database changed
+mysql> select * Student1;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Student1' at line 1
+mysql> select * from Student1;
++--------------+-----------------+-----------------------------------------+-------+
+| Student_ID   | Student_Name    | Student_Email                           | marks |
++--------------+-----------------+-----------------------------------------+-------+
+| 2311cs020200 | Prashanth Yadav | 2311cs020200@mallareddyuniversity.ac.in | 99    |
+| 2311cs020204 | Gagan           | 2311cs020204@mallareddyuniversity.ac.in | 78    |
+| 2311cs020225 | Pranay          | 2311cs020225@mallareddyuniversity.ac.in | 96    |
+| 2311cs020202 | Chintu Yadav    | 2311cs020202@mallareddyuniversity.ac.in | 97    |
++--------------+-----------------+-----------------------------------------+-------+
+4 rows in set (0.03 sec)
+
+mysql> ALTER TABLE Student1 COMMENT = 'Table for student information';
+Query OK, 0 rows affected (0.05 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE Student1 MODIFY Student_Name VARCHAR(300) COMMENT 'Student's full name should be given';
+    '>
+    '> );
+    '> ';l';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's full name should be given';
+
+);
+'' at line 1
+    '> jnl
+    '> ';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'l';
+jnl
+'' at line 1
+mysql> ALTER TABLE Student1 MODIFY Student_Name VARCHAR(300) COMMENT 'Student's full name should be given';
+    '> ./
+    '> .'/'
+    '> l;'
+    -> l;;'
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's full name should be given';
+./
+.'/'
+l;'
+l' at line 1
+ERROR:
+No query specified
+
+    '> l;
+    '> .';l
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''
+l;
+.'' at line 1
+    -> l';l
+    '> l';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'l
+l';l
+l'' at line 1
+mysql> ALTER TABLE Student1 MODIFY Student_Name VARCHAR(250) COMMENT 'Student's full name should be given';
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '>
+    '> use Prashanth;
+    '> ;
+    '> ;';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's full name should be given';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+' at line 1
+mysql> select * from Student1;
++--------------+-----------------+-----------------------------------------+-------+
+| Student_ID   | Student_Name    | Student_Email                           | marks |
++--------------+-----------------+-----------------------------------------+-------+
+| 2311cs020200 | Prashanth Yadav | 2311cs020200@mallareddyuniversity.ac.in | 99    |
+| 2311cs020204 | Gagan           | 2311cs020204@mallareddyuniversity.ac.in | 78    |
+| 2311cs020225 | Pranay          | 2311cs020225@mallareddyuniversity.ac.in | 96    |
+| 2311cs020202 | Chintu Yadav    | 2311cs020202@mallareddyuniversity.ac.in | 97    |
++--------------+-----------------+-----------------------------------------+-------+
+4 rows in set (0.00 sec)
+
+mysql> insert into Student1(Student_ID,Student_Name,Student_Email,marks)
+    -> values(2311cs020187,ShabAli,2311cs020187@mallareddyuniversity.ac.in,98);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@mallareddyuniversity.ac.in,98)' at line 2
+mysql> insert into Student1(Student_ID,Student_Name,Student_Email,marks)
+    -> values('2311cs020187','ShabAli','2311cs020187@mallareddyuniversity.ac.in','98');
+Query OK, 1 row affected (0.04 sec)
+
+mysql> select * from Student1;
++--------------+-----------------+-----------------------------------------+-------+
+| Student_ID   | Student_Name    | Student_Email                           | marks |
++--------------+-----------------+-----------------------------------------+-------+
+| 2311cs020200 | Prashanth Yadav | 2311cs020200@mallareddyuniversity.ac.in | 99    |
+| 2311cs020204 | Gagan           | 2311cs020204@mallareddyuniversity.ac.in | 78    |
+| 2311cs020225 | Pranay          | 2311cs020225@mallareddyuniversity.ac.in | 96    |
+| 2311cs020202 | Chintu Yadav    | 2311cs020202@mallareddyuniversity.ac.in | 97    |
+| 2311cs020187 | ShabAli         | 2311cs020187@mallareddyuniversity.ac.in | 98    |
++--------------+-----------------+-----------------------------------------+-------+
+5 rows in set (0.00 sec)
+
+mysql> ALTER TABLE student ADD Phone_No VARCHAR(100);
+Query OK, 0 rows affected (0.05 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select * from Student1;
++--------------+-----------------+-----------------------------------------+-------+
+| Student_ID   | Student_Name    | Student_Email                           | marks |
++--------------+-----------------+-----------------------------------------+-------+
+| 2311cs020200 | Prashanth Yadav | 2311cs020200@mallareddyuniversity.ac.in | 99    |
+| 2311cs020204 | Gagan           | 2311cs020204@mallareddyuniversity.ac.in | 78    |
+| 2311cs020225 | Pranay          | 2311cs020225@mallareddyuniversity.ac.in | 96    |
+| 2311cs020202 | Chintu Yadav    | 2311cs020202@mallareddyuniversity.ac.in | 97    |
+| 2311cs020187 | ShabAli         | 2311cs020187@mallareddyuniversity.ac.in | 98    |
++--------------+-----------------+-----------------------------------------+-------+
+5 rows in set (0.00 sec)
+
+mysql> ALTER TABLE student ADD Phone_No VARCHAR(100);
+ERROR 1060 (42S21): Duplicate column name 'Phone_No'
+mysql> select * from Student1;
++--------------+-----------------+-----------------------------------------+-------+
+| Student_ID   | Student_Name    | Student_Email                           | marks |
++--------------+-----------------+-----------------------------------------+-------+
+| 2311cs020200 | Prashanth Yadav | 2311cs020200@mallareddyuniversity.ac.in | 99    |
+| 2311cs020204 | Gagan           | 2311cs020204@mallareddyuniversity.ac.in | 78    |
+| 2311cs020225 | Pranay          | 2311cs020225@mallareddyuniversity.ac.in | 96    |
+| 2311cs020202 | Chintu Yadav    | 2311cs020202@mallareddyuniversity.ac.in | 97    |
+| 2311cs020187 | ShabAli         | 2311cs020187@mallareddyuniversity.ac.in | 98    |
++--------------+-----------------+-----------------------------------------+-------+
+5 rows in set (0.00 sec)
+
+mysql> ALTER TABLE Student1 ADD Phone_No VARCHAR(100);
+Query OK, 0 rows affected (0.05 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select * from Student1;
++--------------+-----------------+-----------------------------------------+-------+----------+
+| Student_ID   | Student_Name    | Student_Email                           | marks | Phone_No |
++--------------+-----------------+-----------------------------------------+-------+----------+
+| 2311cs020200 | Prashanth Yadav | 2311cs020200@mallareddyuniversity.ac.in | 99    | NULL     |
+| 2311cs020204 | Gagan           | 2311cs020204@mallareddyuniversity.ac.in | 78    | NULL     |
+| 2311cs020225 | Pranay          | 2311cs020225@mallareddyuniversity.ac.in | 96    | NULL     |
+| 2311cs020202 | Chintu Yadav    | 2311cs020202@mallareddyuniversity.ac.in | 97    | NULL     |
+| 2311cs020187 | ShabAli         | 2311cs020187@mallareddyuniversity.ac.in | 98    | NULL     |
++--------------+-----------------+-----------------------------------------+-------+----------+
+5 rows in set (0.00 sec)
+
+mysql> update Student1 set = "9381573776" where Student_Name ="Prashanth Yadav";
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= "9381573776" where Student_Name ="Prashanth Yadav"' at line 1
+mysql> update Student1 set = '9381573776' where Student_Name ='Prashanth Yadav';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '= '9381573776' where Student_Name ='Prashanth Yadav'' at line 1
+mysql> update Student1
+    -> set Phone_No ='9381573776'
+    -> where Student_ID ='2311cs020200';
+Query OK, 1 row affected (0.04 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from Student1;
++--------------+-----------------+-----------------------------------------+-------+------------+
+| Student_ID   | Student_Name    | Student_Email                           | marks | Phone_No   |
++--------------+-----------------+-----------------------------------------+-------+------------+
+| 2311cs020200 | Prashanth Yadav | 2311cs020200@mallareddyuniversity.ac.in | 99    | 9381573776 |
+| 2311cs020204 | Gagan           | 2311cs020204@mallareddyuniversity.ac.in | 78    | NULL       |
+| 2311cs020225 | Pranay          | 2311cs020225@mallareddyuniversity.ac.in | 96    | NULL       |
+| 2311cs020202 | Chintu Yadav    | 2311cs020202@mallareddyuniversity.ac.in | 97    | NULL       |
+| 2311cs020187 | ShabAli         | 2311cs020187@mallareddyuniversity.ac.in | 98    | NULL       |
++--------------+-----------------+-----------------------------------------+-------+------------+
+5 rows in set (0.00 sec)
+
+mysql> update Student1
+    -> set Phone_No ='9989142212'
+    -> where Student_ID ='2311cs020187';
+Query OK, 1 row affected (0.03 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from Student1;
++--------------+-----------------+-----------------------------------------+-------+------------+
+| Student_ID   | Student_Name    | Student_Email                           | marks | Phone_No   |
++--------------+-----------------+-----------------------------------------+-------+------------+
+| 2311cs020200 | Prashanth Yadav | 2311cs020200@mallareddyuniversity.ac.in | 99    | 9381573776 |
+| 2311cs020204 | Gagan           | 2311cs020204@mallareddyuniversity.ac.in | 78    | NULL       |
+| 2311cs020225 | Pranay          | 2311cs020225@mallareddyuniversity.ac.in | 96    | NULL       |
+| 2311cs020202 | Chintu Yadav    | 2311cs020202@mallareddyuniversity.ac.in | 97    | NULL       |
+| 2311cs020187 | ShabAli         | 2311cs020187@mallareddyuniversity.ac.in | 98    | 9989142212 |
++--------------+-----------------+-----------------------------------------+-------+------------+
+5 rows in set (0.00 sec)
+
+mysql> update Student1
+    -> set Phone_No ='9876543210'
+    -> where Student_ID ='2311cs020204';
+Query OK, 1 row affected (0.03 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from Student1;
++--------------+-----------------+-----------------------------------------+-------+------------+
+| Student_ID   | Student_Name    | Student_Email                           | marks | Phone_No   |
++--------------+-----------------+-----------------------------------------+-------+------------+
+| 2311cs020200 | Prashanth Yadav | 2311cs020200@mallareddyuniversity.ac.in | 99    | 9381573776 |
+| 2311cs020204 | Gagan           | 2311cs020204@mallareddyuniversity.ac.in | 78    | 9876543210 |
+| 2311cs020225 | Pranay          | 2311cs020225@mallareddyuniversity.ac.in | 96    | NULL       |
+| 2311cs020202 | Chintu Yadav    | 2311cs020202@mallareddyuniversity.ac.in | 97    | NULL       |
+| 2311cs020187 | ShabAli         | 2311cs020187@mallareddyuniversity.ac.in | 98    | 9989142212 |
++--------------+-----------------+-----------------------------------------+-------+------------+
+5 rows in set (0.00 sec)
+
+mysql>
+mysql> update Student1
+    -> set Student_Name='Gagan Reddy'
+    -> where marks ='78';
+Query OK, 1 row affected (0.04 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from Student1;
++--------------+-----------------+-----------------------------------------+-------+------------+
+| Student_ID   | Student_Name    | Student_Email                           | marks | Phone_No   |
++--------------+-----------------+-----------------------------------------+-------+------------+
+| 2311cs020200 | Prashanth Yadav | 2311cs020200@mallareddyuniversity.ac.in | 99    | 9381573776 |
+| 2311cs020204 | Gagan Reddy     | 2311cs020204@mallareddyuniversity.ac.in | 78    | 9876543210 |
+| 2311cs020225 | Pranay          | 2311cs020225@mallareddyuniversity.ac.in | 96    | NULL       |
+| 2311cs020202 | Chintu Yadav    | 2311cs020202@mallareddyuniversity.ac.in | 97    | NULL       |
+| 2311cs020187 | ShabAli         | 2311cs020187@mallareddyuniversity.ac.in | 98    | 9989142212 |
++--------------+-----------------+-----------------------------------------+-------+------------+
+5 rows in set (0.00 sec)
+
+mysql> update Student1
+    -> set Phone_No ='9874565668'
+    -> where marks ='96';
+Query OK, 1 row affected (0.03 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update Student1
+    -> set Phone_No ='9877895458'
+    -> where marks ='97';
+Query OK, 1 row affected (0.03 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from Student1;
++--------------+-----------------+-----------------------------------------+-------+------------+
+| Student_ID   | Student_Name    | Student_Email                           | marks | Phone_No   |
++--------------+-----------------+-----------------------------------------+-------+------------+
+| 2311cs020200 | Prashanth Yadav | 2311cs020200@mallareddyuniversity.ac.in | 99    | 9381573776 |
+| 2311cs020204 | Gagan Reddy     | 2311cs020204@mallareddyuniversity.ac.in | 78    | 9876543210 |
+| 2311cs020225 | Pranay          | 2311cs020225@mallareddyuniversity.ac.in | 96    | 9874565668 |
+| 2311cs020202 | Chintu Yadav    | 2311cs020202@mallareddyuniversity.ac.in | 97    | 9877895458 |
+| 2311cs020187 | ShabAli         | 2311cs020187@mallareddyuniversity.ac.in | 98    | 9989142212 |
++--------------+-----------------+-----------------------------------------+-------+------------+
+5 rows in set (0.00 sec)
+
+mysql>
