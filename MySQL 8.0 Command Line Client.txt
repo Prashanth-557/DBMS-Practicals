@@ -1,0 +1,252 @@
+Enter password: ************
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 9
+Server version: 8.0.40 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use Prashanth
+Database changed
+mysql> show tables
+    -> Student
+    -> Student;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Student
+Student' at line 2
+mysql> use prashanth
+Database changed
+mysql> create table Student( Student_Id varchar(200), Student_Name varchar(200), Student Mobile_No varchar(200), Student_E-Mail varchar(200));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Mobile_No varchar(200), Student_E-Mail varchar(200))' at line 1
+mysql> create table Student(Student_Id varchar(200), Student_Name varchar(200), Student Mobile_No varchar(200), Student_E-Mail varchar(200));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Mobile_No varchar(200), Student_E-Mail varchar(200))' at line 1
+mysql> create table Student(
+    -> Student_ID vvarchar(200),
+    -> Student_Name varchar(200),
+    -> Student_MobileNo varchar(200),
+    -> Student_Email varchar(200)
+    -> 0;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'vvarchar(200),
+Student_Name varchar(200),
+Student_MobileNo varchar(200),
+Student' at line 2
+mysql> create table Student(
+    -> Student_ID varchar(200),
+    -> Student_Name varchar(200),
+    -> Student_MobileNo varchar(200),
+    -> Student_Email varchar(200)
+    -> );
+ERROR 1050 (42S01): Table 'student' already exists
+mysql> select * from student;
+Empty set (0.03 sec)
+
+mysql> insert into Student(
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 2
+mysql> insert into Student(Student_ID,Student_Name,Student_MobileNo,Student_Email)
+    -> values('2311cs020200','Prashanth Yadav','984425555','2311cs020200@mallareddyuniversity.ac.in');
+ERROR 1054 (42S22): Unknown column 'Student_ID' in 'field list'
+mysql> insert into Student(Student_ID,Student_Name,Student_MobileNo,Student_Email)
+    -> values(1,'2311cs020200','Prashanth Yadav','984425555','2311cs020200@mallareddyuniversity.ac.in');
+ERROR 1054 (42S22): Unknown column 'Student_ID' in 'field list'
+mysql> insert into Student(S_No,Student_ID,Student_Name,Student_MobileNo,Student_Email)
+    -> values(1,'2311cs020200','Prashanth Yadav','984425555','2311cs020200@mallareddyuniversity.ac.in');
+ERROR 1054 (42S22): Unknown column 'S_No' in 'field list'
+mysql> insert into Student(Student_ID,Student_Name,Student_MobileNo,Student_Email)
+    -> values('2311cs020200','Prashanth Yadav','984425555','2311cs020200@mallareddyuniversity.ac.in');
+ERROR 1054 (42S22): Unknown column 'Student_ID' in 'field list'
+mysql> insert into Student(
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 2
+mysql> create table Student(
+    -> Student_ID char(200),
+    -> Student_Name char(200),
+    -> Student_MobileNo int(200),
+    -> Student_Email varchar(200)
+    -> );
+ERROR 1050 (42S01): Table 'student' already exists
+mysql> create table Student1(
+    -> Student_ID char(200),
+    -> Student_Name char(200),
+    -> Student_MobileNo int(200),
+    -> Student_Email varchar(200)
+    -> );
+Query OK, 0 rows affected, 1 warning (0.06 sec)
+
+mysql> insert into Student(Student_ID,Student_Name,Student_MobileNo,Student_Email)
+    -> values('2311cs020200','Prashanth Yadav','984425555','2311cs020200@mallareddyuniversity.ac.in');
+ERROR 1054 (42S22): Unknown column 'Student_ID' in 'field list'
+mysql> insert into Student1(Student_ID,Student_Name,Student_MobileNo,Student_Email)
+    -> values('2311cs020200','Prashanth Yadav','984425555','2311cs020200@mallareddyuniversity.ac.in');
+Query OK, 1 row affected (0.04 sec)
+
+mysql> select * from Student1;
++--------------+-----------------+------------------+-----------------------------------------+
+| Student_ID   | Student_Name    | Student_MobileNo | Student_Email                           |
++--------------+-----------------+------------------+-----------------------------------------+
+| 2311cs020200 | Prashanth Yadav |        984425555 | 2311cs020200@mallareddyuniversity.ac.in |
++--------------+-----------------+------------------+-----------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> desc Student1;
++------------------+--------------+------+-----+---------+-------+
+| Field            | Type         | Null | Key | Default | Extra |
++------------------+--------------+------+-----+---------+-------+
+| Student_ID       | char(200)    | YES  |     | NULL    |       |
+| Student_Name     | char(200)    | YES  |     | NULL    |       |
+| Student_MobileNo | int          | YES  |     | NULL    |       |
+| Student_Email    | varchar(200) | YES  |     | NULL    |       |
++------------------+--------------+------+-----+---------+-------+
+4 rows in set (0.03 sec)
+
+mysql> alter table Student1 add(marks);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+mysql> alter table Student1 ADD(marks);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+mysql> Alter table Student1 add(marks);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+mysql>
+mysql> Alter table Student1 add(marks char(200));
+Query OK, 0 rows affected (0.05 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select * from Student1;
++--------------+-----------------+------------------+-----------------------------------------+-------+
+| Student_ID   | Student_Name    | Student_MobileNo | Student_Email                           | marks |
++--------------+-----------------+------------------+-----------------------------------------+-------+
+| 2311cs020200 | Prashanth Yadav |        984425555 | 2311cs020200@mallareddyuniversity.ac.in | NULL  |
++--------------+-----------------+------------------+-----------------------------------------+-------+
+1 row in set (0.00 sec)
+
+mysql> Alter table Student1 drop column(marks char(200));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(marks char(200))' at line 1
+mysql> Alter table Student1 drop column(age char(200));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(age char(200))' at line 1
+mysql> Alter table Student1 drop (age char(200));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(age char(200))' at line 1
+mysql> Alter table Student1 drop column age;
+ERROR 1091 (42000): Can't DROP 'age'; check that column/key exists
+mysql> Alter table Student1 drop column marks;
+Query OK, 0 rows affected (0.05 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select * from Student1;
++--------------+-----------------+------------------+-----------------------------------------+
+| Student_ID   | Student_Name    | Student_MobileNo | Student_Email                           |
++--------------+-----------------+------------------+-----------------------------------------+
+| 2311cs020200 | Prashanth Yadav |        984425555 | 2311cs020200@mallareddyuniversity.ac.in |
++--------------+-----------------+------------------+-----------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> Alter table Student1 rename column Student_MobileNo to Student_Mobile_No;
+Query OK, 0 rows affected (0.05 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select * from Student1;
++--------------+-----------------+-------------------+-----------------------------------------+
+| Student_ID   | Student_Name    | Student_Mobile_No | Student_Email                           |
++--------------+-----------------+-------------------+-----------------------------------------+
+| 2311cs020200 | Prashanth Yadav |         984425555 | 2311cs020200@mallareddyuniversity.ac.in |
++--------------+-----------------+-------------------+-----------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> insert into Student1(Student_ID,Student_Name,Student_MobileNo,Student_Email)
+    -> values('2311cs020204','Gagan Reddy','98447465555','2311cs020204@mallareddyuniversity.ac.in');
+ERROR 1054 (42S22): Unknown column 'Student_MobileNo' in 'field list'
+mysql> insert into Student1(Student_ID,Student_Name,Student_Mobile_No,Student_Email)
+    -> values('2311cs020204','Gagan Reddy','98447465555','2311cs020204@mallareddyuniversity.ac.in');
+ERROR 1264 (22003): Out of range value for column 'Student_Mobile_No' at row 1
+mysql> insert into Student1(Student_ID,Student_Name,Student_Mobile_No,Student_Email)
+    -> values('2311cs020204','Gagan Reddy','9844','2311cs020204@mallareddyuniversity.ac.in');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from Student1;
++--------------+-----------------+-------------------+-----------------------------------------+
+| Student_ID   | Student_Name    | Student_Mobile_No | Student_Email                           |
++--------------+-----------------+-------------------+-----------------------------------------+
+| 2311cs020200 | Prashanth Yadav |         984425555 | 2311cs020200@mallareddyuniversity.ac.in |
+| 2311cs020204 | Gagan Reddy     |              9844 | 2311cs020204@mallareddyuniversity.ac.in |
++--------------+-----------------+-------------------+-----------------------------------------+
+2 rows in set (0.00 sec)
+
+mysql> update Student1 set Student_Name = 'Pichi Pukodu' where Student_ID = '2311cs020204';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from Student1;
++--------------+-----------------+-------------------+-----------------------------------------+
+| Student_ID   | Student_Name    | Student_Mobile_No | Student_Email                           |
++--------------+-----------------+-------------------+-----------------------------------------+
+| 2311cs020200 | Prashanth Yadav |         984425555 | 2311cs020200@mallareddyuniversity.ac.in |
+| 2311cs020204 | Pichi Pukodu    |              9844 | 2311cs020204@mallareddyuniversity.ac.in |
++--------------+-----------------+-------------------+-----------------------------------------+
+2 rows in set (0.00 sec)
+
+mysql> insert into Student1(Student_ID,Student_Name,Student_Mobile_No,Student_Email)
+    -> values('2311cs020225','Pranay','956562844','2311cs020225@mallareddyuniversity.ac.in');
+Query OK, 1 row affected (0.03 sec)
+
+mysql> select * from Student1;
++--------------+-----------------+-------------------+-----------------------------------------+
+| Student_ID   | Student_Name    | Student_Mobile_No | Student_Email                           |
++--------------+-----------------+-------------------+-----------------------------------------+
+| 2311cs020200 | Prashanth Yadav |         984425555 | 2311cs020200@mallareddyuniversity.ac.in |
+| 2311cs020204 | Pichi Pukodu    |              9844 | 2311cs020204@mallareddyuniversity.ac.in |
+| 2311cs020225 | Pranay          |         956562844 | 2311cs020225@mallareddyuniversity.ac.in |
++--------------+-----------------+-------------------+-----------------------------------------+
+3 rows in set (0.00 sec)
+
+mysql> insert into Student1(Student_ID,Student_Name,Student_Mobile_No,Student_Email)
+    -> values('2311cs020205','Vishnu Teja','95656284984','2311cs020205@mallareddyuniversity.ac.in'),
+    -> values('2311cs020202','Chintu Yadav','9565623334','2311cs020202@mallareddyuniversity.ac.in');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'values('2311cs020202','Chintu Yadav','9565623334','2311cs020202@mallareddyuniver' at line 3
+mysql> insert into Student1(Student_ID,Student_Name,Student_Mobile_No,Student_Email)
+    -> values('2311cs020202','Chintu Yadav','9565623334','2311cs020202@mallareddyuniversity.ac.in');
+ERROR 1264 (22003): Out of range value for column 'Student_Mobile_No' at row 1
+mysql> insert into Student1(Student_ID,Student_Name,Student_Mobile_No,Student_Email)
+    -> values('2311cs020202','Chintu Yadav','9565334','2311cs020202@mallareddyuniversity.ac.in');
+Query OK, 1 row affected (0.04 sec)
+
+mysql> select * from Student1;
++--------------+-----------------+-------------------+-----------------------------------------+
+| Student_ID   | Student_Name    | Student_Mobile_No | Student_Email                           |
++--------------+-----------------+-------------------+-----------------------------------------+
+| 2311cs020200 | Prashanth Yadav |         984425555 | 2311cs020200@mallareddyuniversity.ac.in |
+| 2311cs020204 | Pichi Pukodu    |              9844 | 2311cs020204@mallareddyuniversity.ac.in |
+| 2311cs020225 | Pranay          |         956562844 | 2311cs020225@mallareddyuniversity.ac.in |
+| 2311cs020202 | Chintu Yadav    |           9565334 | 2311cs020202@mallareddyuniversity.ac.in |
++--------------+-----------------+-------------------+-----------------------------------------+
+4 rows in set (0.00 sec)
+
+mysql> desc Student1;
++-------------------+--------------+------+-----+---------+-------+
+| Field             | Type         | Null | Key | Default | Extra |
++-------------------+--------------+------+-----+---------+-------+
+| Student_ID        | char(200)    | YES  |     | NULL    |       |
+| Student_Name      | char(200)    | YES  |     | NULL    |       |
+| Student_Mobile_No | int          | YES  |     | NULL    |       |
+| Student_Email     | varchar(200) | YES  |     | NULL    |       |
++-------------------+--------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> update Student1 set Student_Name = 'Gagan' where Student_ID = '2311cs020204';
+Query OK, 1 row affected (0.03 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from Student1;
++--------------+-----------------+-------------------+-----------------------------------------+
+| Student_ID   | Student_Name    | Student_Mobile_No | Student_Email                           |
++--------------+-----------------+-------------------+-----------------------------------------+
+| 2311cs020200 | Prashanth Yadav |         984425555 | 2311cs020200@mallareddyuniversity.ac.in |
+| 2311cs020204 | Gagan           |              9844 | 2311cs020204@mallareddyuniversity.ac.in |
+| 2311cs020225 | Pranay          |         956562844 | 2311cs020225@mallareddyuniversity.ac.in |
+| 2311cs020202 | Chintu Yadav    |           9565334 | 2311cs020202@mallareddyuniversity.ac.in |
++--------------+-----------------+-------------------+-----------------------------------------+
+4 rows in set (0.00 sec)
+
+mysql> update Student1 SET
+    -> update Student1 SET
