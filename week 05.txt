@@ -1,0 +1,275 @@
+Enter password: ********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 8.0.41 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2025, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use prashanth
+Database changed
+mysql> create table Employee(
+    -> ID int,
+    -> Salary int;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 3
+mysql> create table Employee(
+    -> ID int,
+    -> Salary int,
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 4
+mysql> create table Employee(
+    -> ID int(),
+    -> Salary int(),
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '),
+Salary int(),
+)' at line 2
+mysql> create table Employee(
+    -> ID int,
+    -> Salary int
+    -> );
+ERROR 1050 (42S01): Table 'employee' already exists
+mysql> select * from employee
+    -> ;
++--------+-----------+------------+
+| Emp_No | Emp_Name  | Address    |
++--------+-----------+------------+
+|   1122 | Shiva     | Sangareddy |
+|   1123 | Prashanth | Sangareddy |
+|   1124 | Gagan     | Ongole     |
++--------+-----------+------------+
+3 rows in set (0.03 sec)
+
+mysql> create table Employee1(
+    -> ID int,
+    -> Salary int
+    -> );
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> INSERT INTO Employees (id, salary) VALUES
+    -> (1, 50000.00),
+    -> (2, 60000.50),
+    -> (3, 75000.75);
+ERROR 1146 (42S02): Table 'prashanth.employees' doesn't exist
+mysql> insert into Employee1(ID, Salary) values
+    -> (1, 100),
+    -> (2, 200),
+    -> (3, 300);
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> select * from employee1;
++------+--------+
+| ID   | Salary |
++------+--------+
+|    1 |    100 |
+|    2 |    200 |
+|    3 |    300 |
++------+--------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT
+    ->     IFNULL(
+    ->         (SELECT DISTINCT salary
+    ->          FROM Employees
+    ->          ORDER BY salary DESC
+    ->          LIMIT 1 OFFSET 1),
+    ->         NULL
+    ->     ) AS second_highest_salary;
+ERROR 1146 (42S02): Table 'prashanth.employees' doesn't exist
+mysql> select
+    -> ifnull(
+    -> select distinct Salary
+    -> from employee1
+    -> order by Salary desc
+    -> limit 1 offset 1),
+    -> null
+    -> )as second_highest_Salary;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'select distinct Salary
+from employee1
+order by Salary desc
+limit 1 offset 1),
+nu' at line 3
+mysql> select distinct Salary
+    -> from employee1
+    -> where Salary is not null
+    -> order by Salary desc
+    -> limit 1 offset 1;
++--------+
+| Salary |
++--------+
+|    200 |
++--------+
+1 row in set (0.01 sec)
+
+mysql> create function get Nth Highest Salary(N int) returnsint begin
+    -> declare M int;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'get Nth Highest Salary(N int) returnsint begin
+declare M int' at line 1
+mysql> create function get Nth highest Salary(N int) returnsint begin declare M int;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'get Nth highest Salary(N int) returnsint begin declare M int' at line 1
+mysql> DELIMITER $$
+mysql>
+mysql> CREATE FUNCTION GetHighestSalary() RETURNS INT
+    -> DETERMINISTIC
+    -> BEGIN
+    ->     DECLARE highest_salary INT;
+    ->
+    ->     SELECT MAX(Salary) INTO highest_salary FROM employee1;
+    ->
+    ->     RETURN highest_salary;
+    -> END $$
+Query OK, 0 rows affected (0.04 sec)
+
+mysql>
+mysql> DELIMITER ;
+mysql> select gethighestSalary();
++--------------------+
+| gethighestSalary() |
++--------------------+
+|                300 |
++--------------------+
+1 row in set (0.02 sec)
+
+mysql> CREATE TABLE Person (
+    ->     Id INT PRIMARY KEY,
+    ->     Name VARCHAR(100),
+    ->     Mobile VARCHAR(15),
+    ->     Email VARCHAR(100)
+    -> );
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> insert into Person(Id, Name, Mobile, Email) values
+    -> (MRUE1200, Prashanth, 987465245, 2311cs020200@mallareddyuniversity.ac.in),
+    -> (MRUE1201, Shiva Kumar, 987465663, 2311cs020202@mallareddyuniversity.ac.in),
+    -> (MRUE1250, Gagan Reddy, 954525245, 2311cs020204@mallareddyuniversity.ac.in);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@mallareddyuniversity.ac.in),
+(MRUE1201, Shiva Kumar, 987465663, 2311cs020202@ma' at line 2
+mysql> insert into Person(Id, Name, Mobile, Email) values
+    ->     Name VARCHAR(100),;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Name VARCHAR(100),' at line 2
+mysql>
+mysql> CREATE TABLE Person (
+    ->     Id varchar(300) PRIMARY KEY,
+    ->     Name VARCHAR(100),
+    ->     Mobile INT(),
+    ->     Email VARCHAR(500)
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '),
+    Email VARCHAR(500)
+)' at line 4
+mysql> insert into Person(Id, Name, Mobile,Email) values
+    -> ('200','Prashanth Yadav','9381573776','prashanth@gmail.com'),
+    -> ('202','Chintu Yadav','7207449250','shiva@gmail.com'),
+    -> ('204','Gagan Bhai','9553323543','gagan@gmail.com');
+Query OK, 3 rows affected (0.02 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> select * from Person;
++-----+-----------------+------------+---------------------+
+| Id  | Name            | Mobile     | Email               |
++-----+-----------------+------------+---------------------+
+| 200 | Prashanth Yadav | 9381573776 | prashanth@gmail.com |
+| 202 | Chintu Yadav    | 7207449250 | shiva@gmail.com     |
+| 204 | Gagan Bhai      | 9553323543 | gagan@gmail.com     |
++-----+-----------------+------------+---------------------+
+3 rows in set (0.00 sec)
+
+mysql> select Email
+    -> from Person
+    -> group by Email
+    -> having count(Email)>1;
+Empty set (0.01 sec)
+
+mysql> create table Student1;
+ERROR 4028 (HY000): A table must have at least one visible column.
+mysql> CREATE TABLE Student (
+    ->     Student_ID INT PRIMARY KEY,
+    ->     Stu_Name VARCHAR(100),
+    ->     Stu_Subject_ID VARCHAR(10),
+    ->     Stu_Age INT,
+    ->     Marks INT
+    ->  );
+ERROR 1050 (42S01): Table 'student' already exists
+mysql> CREATE TABLE student2 (
+    ->     Student_ID INT PRIMARY KEY,
+    ->     Stu_Name VARCHAR(100),
+    ->     Stu_Subject_ID VARCHAR(10),
+    ->     Stu_Age INT,
+    ->     Marks INT
+    -> );
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> INSERT INTO student2 (Student_ID, Stu_Name, Stu_Subject_ID, Stu_Age, Marks) VALUES
+    -> (101, 'Akhil', 'BCA101', 18, 85),
+    -> (102, 'Balram', 'BCA104', 20, 78),
+    -> (103, 'Bheem', 'BCA102', 19, 80),
+    -> (104, 'Chetan', 'BCA103', 22, 95),
+    -> (105, 'Diksha', 'BCA104', 20, 99),
+    -> (106, 'Raman', 'BCA105', 19, 88),
+    -> (107,'Sheetal','BCA103',22,98);
+Query OK, 7 rows affected (0.01 sec)
+Records: 7  Duplicates: 0  Warnings: 0
+
+mysql> select * from student2;
++------------+----------+----------------+---------+-------+
+| Student_ID | Stu_Name | Stu_Subject_ID | Stu_Age | Marks |
++------------+----------+----------------+---------+-------+
+|        101 | Akhil    | BCA101         |      18 |    85 |
+|        102 | Balram   | BCA104         |      20 |    78 |
+|        103 | Bheem    | BCA102         |      19 |    80 |
+|        104 | Chetan   | BCA103         |      22 |    95 |
+|        105 | Diksha   | BCA104         |      20 |    99 |
+|        106 | Raman    | BCA105         |      19 |    88 |
+|        107 | Sheetal  | BCA103         |      22 |    98 |
++------------+----------+----------------+---------+-------+
+7 rows in set (0.00 sec)
+
+mysql> select MAX(marks), MIN(marks) from student2;
++------------+------------+
+| MAX(marks) | MIN(marks) |
++------------+------------+
+|         99 |         78 |
++------------+------------+
+1 row in set (0.01 sec)
+
+mysql> select * from student2 limit 1;
++------------+----------+----------------+---------+-------+
+| Student_ID | Stu_Name | Stu_Subject_ID | Stu_Age | Marks |
++------------+----------+----------------+---------+-------+
+|        101 | Akhil    | BCA101         |      18 |    85 |
++------------+----------+----------------+---------+-------+
+1 row in set (0.01 sec)
+
+mysql> select * from student2
+    -> where id=(select MAX(id) from student2;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 2
+mysql> select * from student2
+    -> where id=(select MAX(id);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 2
+mysql> SELECT * FROM student2
+    -> WHERE Student_ID = (SELECT MAX(Student_ID) FROM student2);
++------------+----------+----------------+---------+-------+
+| Student_ID | Stu_Name | Stu_Subject_ID | Stu_Age | Marks |
++------------+----------+----------------+---------+-------+
+|        107 | Sheetal  | BCA103         |      22 |    98 |
++------------+----------+----------------+---------+-------+
+1 row in set (0.01 sec)
+
+mysql> select * from student2 limit 4 offset 0;
++------------+----------+----------------+---------+-------+
+| Student_ID | Stu_Name | Stu_Subject_ID | Stu_Age | Marks |
++------------+----------+----------------+---------+-------+
+|        101 | Akhil    | BCA101         |      18 |    85 |
+|        102 | Balram   | BCA104         |      20 |    78 |
+|        103 | Bheem    | BCA102         |      19 |    80 |
+|        104 | Chetan   | BCA103         |      22 |    95 |
++------------+----------+----------------+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql>
